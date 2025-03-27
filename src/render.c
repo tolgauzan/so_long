@@ -42,18 +42,18 @@ static void	*get_tile_image(t_game *game, int tile)
 	image = NULL;
 	if (tile == '1')
 		image = game->images->wall;
-	else if (tile == '0' || tile == 'P')
-		image = game->images->background;
 	else if (tile == 'E')
 		image = game->images->exit;
 	else if (tile == 'C')
 		image = game->images->collectible;
+	else if (tile == '0' || tile == 'P')
+		image = game->images->background;
 	if (!image)
 		free_exit(game, "image could not be suppressed", 1);
 	return (image);
 }
 
-void	render_map(t_game *game)
+void	render(t_game *game)
 {
 	int		row;
 	int		col;
@@ -71,17 +71,6 @@ void	render_map(t_game *game)
 			col++;
 		}
 		row++;
-	}
-}
-
-void	render_player(t_game *game)
-{
-	if (game->map->t_map[game->player.row][game->player.col] == 'E')
-	{
-		mlx_put_image_to_window(game->mlx, game->window,
-			game->images->exit,
-			game->player.col * TILE_SIZE,
-			game->player.row * TILE_SIZE);
 	}
 	mlx_put_image_to_window(game->mlx, game->window,
 		game->images->player,

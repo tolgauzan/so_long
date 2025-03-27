@@ -90,8 +90,7 @@ int	key_events(int key, t_game *game)
 		|| key == UP || key == DOWN || key == LEFT || key == RIGHT)
 	{
 		press_key(key, game);
-		render_map(game);
-		render_player(game);
+		render(game);
 		display_score(game);
 	}
 	return (0);

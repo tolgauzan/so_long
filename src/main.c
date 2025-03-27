@@ -24,8 +24,7 @@ static void	init_game_window(t_game *game)
 	h = game->map->rows * TILE_SIZE;
 	init_mlx_and_window(game);
 	load_images(game);
-	render_map(game);
-	render_player(game);
+	render(game);
 	mlx_string_put(game->mlx, game->window,
 		(w - 60) / 2, h / 2, 0xFFFFFF, "Start Game!");
 }

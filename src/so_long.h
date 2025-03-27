@@ -89,8 +89,7 @@ void	check_map_walls(t_game *game);
 void	check_map_valid_path(t_game *game);
 //Render
 void	load_images(t_game *game);
-void	render_map(t_game *game);
-void	render_player(t_game *game);
+void	render(t_game *game);
 //Events
 int		close_game(t_game *game);
 int		key_events(int key, t_game *game);
