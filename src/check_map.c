@@ -35,10 +35,10 @@ static void	check_map_cell(t_game *game)
 	int		i;
 	int		j;
 
-	i = 0;
+	i = -1;
 	while (++i < game->map->rows)
 	{
-		j = 0;
+		j = -1;
 		while (++j < game->map->cols)
 		{
 			c = game->map->t_map[i][j];
