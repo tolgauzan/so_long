@@ -17,16 +17,13 @@
 
 static void	init_game_window(t_game *game)
 {
-	int	w;
-	int	h;
-
-	w = game->map->cols * TILE_SIZE;
-	h = game->map->rows * TILE_SIZE;
 	init_mlx_and_window(game);
 	load_images(game);
 	render(game);
 	mlx_string_put(game->mlx, game->window,
-		(w - 60) / 2, h / 2, 0xFFFFFF, "Start Game!");
+		(game->map->cols * TILE_SIZE - 60) / 2,
+		(game->map->rows * TILE_SIZE / 2),
+		0xFFFFFF, "Start Game!");
 }
 
 static void	check_map(t_game *game, const char *file_path)
