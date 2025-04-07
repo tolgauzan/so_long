@@ -46,7 +46,7 @@ static void	alloc_and_count_rows(t_game *game, const char *file_path)
 	}
 	free(line);
 	close(fd);
-	if (game->map->rows < 4)
+	if (game->map->rows < 3)
 		free_exit(game, "Mandatory objects cannot fit on the map", 1);
 	game->map->t_map = (char **)malloc(
 			(game->map->rows + 1) * sizeof(char *));
