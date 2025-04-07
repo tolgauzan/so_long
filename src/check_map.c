@@ -20,7 +20,7 @@ void	check_map_shape(t_game *game)
 
 	i = 0;
 	game->map->cols = (int)ft_strlen(game->map->t_map[0]);
-	if (game->map->cols < 4)
+	if (game->map->cols < 3)
 		free_exit(game, "Mandatory objects cannot fit on the map", 1);
 	while (i < game->map->rows)
 	{
